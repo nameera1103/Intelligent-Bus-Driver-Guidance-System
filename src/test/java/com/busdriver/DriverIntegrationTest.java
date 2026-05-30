@@ -40,6 +40,7 @@ class DriverIntegrationTest {
     @Test
     void itd01_validDriver_isStoredAndRetrievedCorrectly() throws IOException {
         Driver d = validDriver();
+
         boolean added = repo.add(d);
 
         assertTrue(added, "Driver should be added successfully");
@@ -63,6 +64,7 @@ class DriverIntegrationTest {
         boolean secondAdd = repo.add(duplicate);
 
         assertFalse(secondAdd, "Duplicate driverID should be rejected");
+
         assertEquals(1, repo.count(), "Count should still be 1 after rejected duplicate");
     }
 
