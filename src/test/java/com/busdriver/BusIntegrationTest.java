@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Integration tests for BusRepository using real TXT files.
- * Exactly 4 test cases as per assignment requirements.
- * Each test verifies a complete end-to-end operation including file persistence.
  */
 class BusIntegrationTest {
 
@@ -16,6 +14,7 @@ class BusIntegrationTest {
     private static final String TEST_FILE = "test_buses.txt";
 
     private Bus validBus() {
+
         return new Bus("12345678", 60, 85.0, "Diesel");
     }
 

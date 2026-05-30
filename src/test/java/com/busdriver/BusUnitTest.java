@@ -17,6 +17,7 @@ class BusUnitTest {
      */
     @Test
     void b1_validBusID_shouldBeAccepted() {
+
         assertTrue(ValidationUtils.isValidBusID("12345678"));
     }
 
@@ -25,6 +26,7 @@ class BusUnitTest {
      */
     @Test
     void b1_busIDWithLetters_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidBusID("1234567A"));
     }
 
@@ -33,6 +35,7 @@ class BusUnitTest {
      */
     @Test
     void b1_busIDTooShort_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidBusID("1234567"));
     }
 

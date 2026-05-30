@@ -18,6 +18,7 @@ class DriverUnitTest {
      */
     @Test
     void d1_validDriverID_shouldBeAccepted() {
+
         assertTrue(ValidationUtils.isValidDriverID("23@#abcdAB"));
     }
 
@@ -26,6 +27,7 @@ class DriverUnitTest {
      */
     @Test
     void d1_idTooShort_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidDriverID("23@@AB"));
     }
 
@@ -35,6 +37,7 @@ class DriverUnitTest {
      */
     @Test
     void d1_onlyOneSpecialChar_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidDriverID("23@abcdeAB"));
     }
 
@@ -71,6 +74,7 @@ class DriverUnitTest {
      */
     @Test
     void d3_validBirthdate_shouldBeAccepted() {
+
         assertTrue(ValidationUtils.isValidBirthdate("15-06-1990"));
     }
 
@@ -79,6 +83,7 @@ class DriverUnitTest {
      */
     @Test
     void d3_wrongFormatBirthdate_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidBirthdate("1990-06-15"));
     }
 
@@ -88,6 +93,7 @@ class DriverUnitTest {
      */
     @Test
     void d3_nonExistentDate_shouldBeRejected() {
+
         assertFalse(ValidationUtils.isValidBirthdate("31-02-1990"));
     }
 
