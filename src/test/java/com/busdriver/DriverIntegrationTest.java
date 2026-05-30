@@ -64,7 +64,6 @@ class DriverIntegrationTest {
         boolean secondAdd = repo.add(duplicate);
 
         assertFalse(secondAdd, "Duplicate driverID should be rejected");
-
         assertEquals(1, repo.count(), "Count should still be 1 after rejected duplicate");
     }
 

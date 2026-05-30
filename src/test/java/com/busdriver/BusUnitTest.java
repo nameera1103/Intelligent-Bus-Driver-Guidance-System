@@ -17,7 +17,6 @@ class BusUnitTest {
      */
     @Test
     void b1_validBusID_shouldBeAccepted() {
-
         assertTrue(ValidationUtils.isValidBusID("12345678"));
     }
 

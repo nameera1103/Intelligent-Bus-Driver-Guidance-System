@@ -39,6 +39,7 @@ class BusIntegrationTest {
         assertTrue(added, "Bus should be added successfully");
 
         Bus retrieved = repo.retrieve("12345678");
+
         assertNotNull(retrieved, "Bus should be retrievable after add");
         assertEquals(60, retrieved.getCapacity());
         assertEquals("Diesel", retrieved.getFuelType());
