@@ -18,7 +18,6 @@ class DriverUnitTest {
      */
     @Test
     void d1_validDriverID_shouldBeAccepted() {
-
         assertTrue(ValidationUtils.isValidDriverID("23@#abcdAB"));
     }
 
