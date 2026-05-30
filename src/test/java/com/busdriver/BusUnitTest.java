@@ -161,6 +161,7 @@ class BusUnitTest {
      */
     @Test
     void b5_lightLicense_invalidForElectricBus() {
+
         assertFalse(ValidationUtils.isLicenseValidForBusType("Light", "Electricity"));
     }
 }
