@@ -1,0 +1,2 @@
+# Intelligent Bus Driver Guidance System - Bus Records
+# Format: busID,capacity,fuelLevel,fuelType
