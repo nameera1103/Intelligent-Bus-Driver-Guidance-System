@@ -41,7 +41,7 @@ public class Driver {
         this.birthdate = birthdate;
     }
 
-    // --- Getters ---
+    //  Getters
     public String getDriverID() { return driverID; }
     public String getName() { return name; }
     public int getExperienceYears() { return experienceYears; }
@@ -49,7 +49,7 @@ public class Driver {
     public String getAddress() { return address; }
     public String getBirthdate() { return birthdate; }
 
-    // --- Setters with business rule enforcement ---
+    //  Setters with business rule enforcement
 
     /**
      * D5: driverID is immutable — no setter provided.

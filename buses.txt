@@ -1,2 +1,5 @@
 # Intelligent Bus Driver Guidance System - Bus Records
 # Format: busID,capacity,fuelLevel,fuelType
+
+
+12345678,40,85.0,Diesel

@@ -26,13 +26,13 @@ public class Bus {
         this.fuelType = fuelType;
     }
 
-    // --- Getters ---
+    //  Getters
     public String getBusID() { return busID; }
     public int getCapacity() { return capacity; }
     public double getFuelLevel() { return fuelLevel; }
     public String getFuelType() { return fuelType; }
 
-    // --- Setters ---
+    // Setters
 
     /**
      * B2: Capacity can only decrease, never increase.

@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.nio.file.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Integration tests for DriverRepository.
- * Uses real TXT files and real class implementations.
- * File is reset before each test to ensure isolation.
- */
+
+ // Integration tests for DriverRepository.
+
 class DriverIntegrationTest {
 
     private DriverRepository repo;
@@ -34,9 +32,9 @@ class DriverIntegrationTest {
         Files.deleteIfExists(Paths.get(TEST_FILE));
     }
 
-    /**
-     * IT-D01: Valid driver is stored and retrieved correctly from TXT file.
-     */
+
+     // IT-D01 -  Valid driver is stored and retrieved correctly from TXT file.
+
     @Test
     void itd01_validDriver_isStoredAndRetrievedCorrectly() throws IOException {
         Driver d = validDriver();
@@ -52,9 +50,9 @@ class DriverIntegrationTest {
         assertEquals("15-06-1990", retrieved.getBirthdate());
     }
 
-    /**
-     * IT-D02: Driver with duplicate ID is rejected and not stored.
-     */
+
+     // T-D02 -  Driver with duplicate ID is rejected and not stored.
+
     @Test
     void itd02_duplicateDriverID_isRejected() throws IOException {
         repo.add(validDriver());
@@ -67,10 +65,9 @@ class DriverIntegrationTest {
         assertEquals(1, repo.count(), "Count should still be 1 after rejected duplicate");
     }
 
-    /**
-     * IT-D03: Update is persisted correctly to TXT file.
-     * D4 and D5 are also verified during update.
-     */
+
+     //  IT-D03 -  Update is persisted correctly to TXT file.
+
     @Test
     void itd03_update_isPersistedCorrectly() throws IOException {
         repo.add(validDriver());
@@ -88,9 +85,9 @@ class DriverIntegrationTest {
         assertEquals("23@#abcdAB", updated.getDriverID());
     }
 
-    /**
-     * IT-D04: Count reflects correct number of stored drivers after add operations.
-     */
+
+     //  IT-D04 -  Count reflects correct number of stored drivers after add operations.
+
     @Test
     void itd04_count_isUpdatedCorrectlyAfterAdds() throws IOException {
         assertEquals(0, repo.count(), "Initial count should be 0");

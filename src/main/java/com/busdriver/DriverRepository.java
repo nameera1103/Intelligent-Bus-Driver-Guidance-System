@@ -15,9 +15,8 @@ public class DriverRepository {
 
     private final String filePath;
 
-    /**
-     * Constructor — accepts file path so tests can use isolated temp files.
-     */
+     // Constructor — accepts file path so tests can use isolated temp files.
+
     public DriverRepository(String filePath) {
         this.filePath = filePath;
         // Create file if it doesn't exist
@@ -61,9 +60,8 @@ public class DriverRepository {
         return null;
     }
 
-    /**
-     * Retrieves all drivers from the TXT file.
-     */
+     //Retrieves all drivers from the TXT file.
+
     public List<Driver> retrieveAll() throws IOException {
         List<Driver> drivers = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -113,9 +111,8 @@ public class DriverRepository {
         return true;
     }
 
-    /**
-     * Returns the number of driver records stored.
-     */
+     // Returns the number of driver records stored.
+
     public int count() throws IOException {
         return retrieveAll().size();
     }
@@ -133,9 +130,8 @@ public class DriverRepository {
         }
     }
 
-    /**
-     * Clears all records — used in tests for clean state.
-     */
+     // Clears all records — used in tests for clean state.
+
     public void clearAll() throws IOException {
         new FileWriter(filePath, false).close();
     }

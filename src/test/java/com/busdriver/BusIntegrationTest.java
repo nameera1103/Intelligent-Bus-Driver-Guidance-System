@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Integration tests for BusRepository using real TXT files.
- */
+//Integration tests for BusRepository using real TXT files.
 class BusIntegrationTest {
 
     private BusRepository repo;
@@ -29,10 +27,8 @@ class BusIntegrationTest {
         Files.deleteIfExists(Paths.get(TEST_FILE));
     }
 
-    /**
-     * IT-B01: Valid bus is stored correctly and retrieved from TXT file.
-     * Verifies that all fields persist and are read back accurately.
-     */
+     //IT-B01 -  Valid bus is stored correctly and retrieved from TXT file.
+
     @Test
     void itb01_validBus_isStoredAndRetrievedCorrectly() throws IOException {
         boolean added = repo.add(validBus());
@@ -46,10 +42,8 @@ class BusIntegrationTest {
         assertEquals(85.0, retrieved.getFuelLevel(), 0.01);
     }
 
-    /**
-     * IT-B02: Bus with duplicate busID is rejected and not stored.
-     * Verifies B1 duplicate rule is enforced at the repository level.
-     */
+     // IT-B02 -  Bus with duplicate busID is rejected and not stored.
+
     @Test
     void itb02_duplicateBusID_isRejected() throws IOException {
         repo.add(validBus());
@@ -60,10 +54,8 @@ class BusIntegrationTest {
         assertEquals(1, repo.count(), "Count must remain 1 after rejected duplicate");
     }
 
-    /**
-     * IT-B03: Valid capacity decrease is persisted correctly to TXT file.
-     * Verifies B2 (capacity can decrease) is enforced and saved.
-     */
+     // IT-B03 -  Valid capacity decrease is persisted correctly to TXT file.
+
     @Test
     void itb03_capacityDecrease_isPersistedCorrectly() throws IOException {
         repo.add(validBus());
@@ -75,10 +67,9 @@ class BusIntegrationTest {
         assertEquals(70.0, updated.getFuelLevel(), 0.01);
     }
 
-    /**
-     * IT-B04: Record count updates correctly after multiple successful add operations.
-     * Verifies count() reflects the exact number of stored records.
-     */
+
+     // IT-B04 -  Record count updates correctly after multiple successful add operations.
+
     @Test
     void itb04_count_updatesCorrectlyAfterAdds() throws IOException {
         assertEquals(0, repo.count(), "Initial count should be 0");

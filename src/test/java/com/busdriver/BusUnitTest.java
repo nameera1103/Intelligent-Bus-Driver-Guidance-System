@@ -5,44 +5,43 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for Bus class and conditions B1-B5.
- * Exactly 15 test cases: 3 per condition as per assignment requirements.
- * Covers normal cases, invalid inputs, and edge cases.
+ * 15 test cases: 3 per condition .
  */
 class BusUnitTest {
 
-    // ===================== B1: Bus ID Validation =====================
+    // //== B1: Bus ID Validation ==//
 
-    /**
-     * B1-TC01: Normal case — valid 8-digit busID should be accepted.
-     */
+
+     //B1-TC01 -  Normal case — valid 8-digit busID should be accepted.
+
     @Test
     void b1_validBusID_shouldBeAccepted() {
         assertTrue(ValidationUtils.isValidBusID("12345678"));
     }
 
-    /**
-     * B1-TC02: Invalid case — busID contains a letter instead of digit.
-     */
+
+     //  B1-TC02: Invalid case — busID contains a letter instead of digit.
+
     @Test
     void b1_busIDWithLetters_shouldBeRejected() {
 
         assertFalse(ValidationUtils.isValidBusID("1234567A"));
     }
 
-    /**
-     * B1-TC03: Edge case — busID is only 7 digits, one short of required length.
-     */
+
+     // B1-TC03 -  Edge case — busID is only 7 digits, one short of required length.
+
     @Test
     void b1_busIDTooShort_shouldBeRejected() {
 
         assertFalse(ValidationUtils.isValidBusID("1234567"));
     }
 
-    // ===================== B2: Capacity Update Restriction =====================
+    // //== B2: Capacity Update Restriction ==//
 
-    /**
-     * B2-TC01: Normal case — decreasing capacity is allowed.
-     */
+
+     //B2-TC01 -  Normal case — decreasing capacity is allowed.
+
     @Test
     void b2_decreasingCapacity_shouldBeAllowed() {
         Bus bus = new Bus("12345678", 60, 80.0, "Diesel");
@@ -50,9 +49,9 @@ class BusUnitTest {
         assertEquals(50, bus.getCapacity());
     }
 
-    /**
-     * B2-TC02: Invalid case — increasing capacity must be rejected.
-     */
+
+     // B2-TC02: Invalid case — increasing capacity must be rejected.
+
     @Test
     void b2_increasingCapacity_shouldBeRejected() {
         Bus bus = new Bus("12345678", 60, 80.0, "Diesel");
@@ -68,10 +67,10 @@ class BusUnitTest {
         assertDoesNotThrow(() -> bus.setCapacity(60));
     }
 
-    // ===================== B3: Driver Age Restriction =====================
+    //  //== B3: Driver Age Restriction ==/
 
     /**
-     * B3-TC01: Normal case — driver born in 1990 is well under 50.
+     * B3-TC01 -  Normal case — driver born in 1990 is well under 50.
      * Age restriction does not apply.
      */
     @Test
@@ -81,7 +80,7 @@ class BusUnitTest {
     }
 
     /**
-     * B3-TC02: Invalid case — driver born in 1960 is over 50.
+     * B3-TC02 - Invalid case — driver born in 1960 is over 50.
      * Cannot drive buses with capacity >= 50.
      */
     @Test
@@ -101,10 +100,10 @@ class BusUnitTest {
         assertFalse(age > 50);
     }
 
-    // ===================== B4: Electric Bus Restriction =====================
+    // //== B4: Electric Bus Restriction ==//
 
     /**
-     * B4-TC01: Normal case — driver with exactly 5 years experience
+     * B4-TC01 - Normal case — driver with exactly 5 years experience
      * meets the minimum requirement to drive an electric bus.
      */
     @Test
@@ -115,7 +114,7 @@ class BusUnitTest {
     }
 
     /**
-     * B4-TC02: Invalid case — driver with 3 years experience
+     * B4-TC02 - Invalid case — driver with 3 years experience
      * does not meet the minimum requirement for electric buses.
      */
     @Test
@@ -126,7 +125,7 @@ class BusUnitTest {
     }
 
     /**
-     * B4-TC03: Edge case — driver with exactly 4 years experience
+     * B4-TC03 - Edge case — driver with exactly 4 years experience
      * falls one year short of the 5-year minimum for electric buses.
      */
     @Test
@@ -138,16 +137,15 @@ class BusUnitTest {
 
     // ===================== B5: Driver Licence Restriction =====================
 
-    /**
-     * B5-TC01: Normal case — Heavy licence is valid for electric buses.
-     */
+    // B5-TC01 -  Normal case — Heavy licence is valid for electric buses.
+
     @Test
     void b5_heavyLicense_validForElectricBus() {
         assertTrue(ValidationUtils.isLicenseValidForBusType("Heavy", "Electricity"));
     }
 
     /**
-     * B5-TC02: Normal case — PublicTransport licence is valid for hybrid buses.
+     * B5-TC02 - Normal case — PublicTransport licence is valid for hybrid buses.
      */
     @Test
     void b5_publicTransportLicense_validForHybridBus() {
@@ -155,7 +153,7 @@ class BusUnitTest {
     }
 
     /**
-     * B5-TC03: Edge case — Light licence is not valid for electric buses.
+     * B5-TC03 -  Edge case — Light licence is not valid for electric buses.
      * Only Heavy and PublicTransport are permitted for electric/hybrid.
      */
     @Test

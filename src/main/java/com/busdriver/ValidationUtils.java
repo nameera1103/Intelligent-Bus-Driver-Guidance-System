@@ -12,10 +12,10 @@ public class ValidationUtils {
 
     /**
      * D1: Validates driverID format.
-     * - Exactly 10 characters
-     * - First 2 chars: digits 2-9
-     * - Characters 3-8: must contain at least 2 special characters
-     * - Last 2 chars: uppercase A-Z
+     * Exactly 10 characters
+     * First 2 chars: digits 2-9
+     * Characters 3-8: must contain at least 2 special characters
+     * Last 2 chars: uppercase A-Z
      */
     public static boolean isValidDriverID(String id) {
         if (id == null || id.length() != 10) return false;
